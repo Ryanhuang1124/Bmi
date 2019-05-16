@@ -20,6 +20,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findviews();
+        btn_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Information")
+                        .setMessage("BMI原來的設計是一個用於公眾健康研究的統計工具")
+                        .setPositiveButton("OK",null)
+                        .show();
+            }
+        });
     }
     public void bmi(View view){
         String str_w = ed_weight.getText().toString();
@@ -41,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
-        
+
     }
+
 
     private void findviews(){
         weight=findViewById(R.id.tx_weight);
