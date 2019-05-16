@@ -13,7 +13,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
-        android:text="體重"
+        android:text="@string/weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="身高"
+        android:text="@string/height"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="@+id/ed_weight"
         app:layout_constraintTop_toBottomOf="@+id/ed_weight" />
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:onClick="bmi"
-        android:text="計算BMI"
+        android:text="@string/bmi_calculate"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="@+id/ed_height"
         app:layout_constraintTop_toBottomOf="@+id/ed_height" />
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:text="說明"
+        android:text="@string/information"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toEndOf="@+id/btn_bmi"
         app:layout_constraintTop_toTopOf="@+id/btn_bmi" />

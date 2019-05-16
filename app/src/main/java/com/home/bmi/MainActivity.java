@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
     TextView weight,height;
@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("Information")
-                        .setMessage("BMI原來的設計是一個用於公眾健康研究的統計工具")
-                        .setPositiveButton("OK",null)
+                        .setTitle(R.string.info)
+                        .setMessage(R.string.bmi_info)
+                        .setPositiveButton(R.string.posbtn ,null)
                         .show();
             }
         });
@@ -38,12 +38,10 @@ public class MainActivity extends AppCompatActivity {
         double h = Double.parseDouble(str_h);
         double bmi = w/(h*h);
 
-        Toast.makeText(this,"BMI="+bmi,Toast.LENGTH_SHORT).show();
-
         new AlertDialog.Builder(this)
-                .setTitle("BMI")
-                .setMessage("Your BMI is "+ bmi)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setTitle(R.string.bmi)
+                .setMessage(getString(R.string.your_bmi_is)+ bmi)
+                .setPositiveButton(R.string.posbtn, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         ed_weight.setText("");
