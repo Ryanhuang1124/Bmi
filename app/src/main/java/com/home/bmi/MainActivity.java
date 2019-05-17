@@ -1,6 +1,7 @@
 package com.home.bmi;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,17 +39,21 @@ public class MainActivity extends AppCompatActivity {
         double h = Double.parseDouble(str_h);
         double bmi = w/(h*h);
 
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.bmi)
-                .setMessage(getString(R.string.your_bmi_is)+ bmi)
-                .setPositiveButton(R.string.posbtn, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        ed_weight.setText("");
-                        ed_height.setText("");
-                    }
-                })
-                .show();
+        Intent intent = new Intent(this,ResultActivity.class);
+        intent.putExtra("BMI",bmi);
+        startActivity(intent);
+
+//        new AlertDialog.Builder(this)
+//                .setTitle(R.string.bmi)
+//                .setMessage(getString(R.string.your_bmi_is)+ bmi)
+//                .setPositiveButton(R.string.posbtn, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        ed_weight.setText("");
+//                        ed_height.setText("");
+//                    }
+//                })
+//                .show();
 
     }
 
